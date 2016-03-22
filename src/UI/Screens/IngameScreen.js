@@ -29,15 +29,28 @@ window.IngameScreen = React.createClass({
     }
 
     return (
-      <div style={styles.characterChooser}>
-        <div style={{width: 32, height: 32, background: '#01242C url(assets/gfx/characters/' + this.state.currentCharacter + '/walkDown-0002.png) no-repeat 0 0'}} onClick={this._clickCharacter}></div>
-        {this.state.showOthers && otherElements}
+      <div>
+        <div style={styles.characterChooser}>
+          <div style={{width: 32, height: 32, background: '#01242C url(assets/gfx/characters/' + this.state.currentCharacter + '/walkDown-0002.png) no-repeat 0 0'}} onClick={this._clickCharacter}></div>
+          {this.state.showOthers && otherElements}
+        </div>
+        <div style={styles.botom}>aa</div>
       </div>
     );
   }
 });
 
 var styles = {
+  botom: {
+    position: 'absolute',
+    top: 700,
+    left: 0,
+    width: 960,
+    height: 400,
+    padding: 5,
+    opacity: 0.9,
+    background: 'transparent url(assets/ui/bottom.png) no-repeat 0 0'
+  },
   characterChooser: {
     position: 'absolute',
     top: 20,

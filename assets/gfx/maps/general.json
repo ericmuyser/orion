@@ -9,6 +9,14 @@
         {
             "type": "image",
             "subtype": "tileset",
+            "key": "map_tileset_general2",
+            "name": "general2",
+            "url": "assets/gfx/maps/tron/town center sample.PNG",
+            "overwrite": false
+        },
+        {
+            "type": "image",
+            "subtype": "tileset",
             "key": "map_tileset_general",
             "name": "general",
             "url": "assets/gfx/maps/tron/map.png",
