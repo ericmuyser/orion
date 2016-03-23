@@ -553,8 +553,15 @@ Hackatron.Game.prototype = {
     fitToWindow: function() {
         this.game.canvas.style['width'] = '100%';
         this.game.canvas.style['height'] = '100%';
-        document.getElementById('game').style['width'] = Hackatron.getWidthRatioScale() * 100 + '%';
-        document.getElementById('game').style['height'] = Hackatron.getHeightRatioScale() * 100 + '%';
+        Hackatron.gameContainer.style['width'] = Hackatron.getWidthRatioScale() * 100 + '%';
+        Hackatron.gameContainer.style['height'] = Hackatron.getHeightRatioScale() * 100 + '%';
+        Hackatron.gameContainer.style['transform'] = 'perspective(900px) rotateX(10deg) rotate(-3deg)';
+
+    //         width: 100%;
+    // margin-top: -100px;
+    // margin-left: -50px;
+    // transform: perspective(900px) rotateX(10deg) rotate(-3deg);
+    // height: 90%;
         //window.onresize();
     },
 

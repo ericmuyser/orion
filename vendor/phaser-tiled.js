@@ -4513,10 +4513,10 @@ function Tilemap(game, key, group) {
                 break;
 
             case 'imagelayer':
-                lyr = game.add.sprite(ldata.x, ldata.y, utils.cacheKey(key, 'layer', ldata.name), null, this);
+                lyr = game.add.sprite(ldata.offsetx, ldata.offsety, utils.cacheKey(key, 'layer', ldata.name), null, this);
 
                 lyr.visible = ldata.visible;
-                lyr.apha = ldata.opacity;
+                lyr.alpha = ldata.opacity;
 
                 this.images.push(lyr);
                 break;

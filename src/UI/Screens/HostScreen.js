@@ -1,12 +1,14 @@
-window.HostScreen = React.createClass({
+import React from 'react';
+
+var HostScreen = React.createClass({
   _clickStart: function() {
     Hackatron.loader.state.start('Game');
   },
   render: function() {
     return (
-      <div style={styles.container}>
-        <div style={styles.startButton} onClick={this._clickStart}>Host Now</div>
-      </div>
+      <View style={styles.container}>
+        <View style={styles.startButton} onClick={this._clickStart}>Host Now</View>
+      </View>
     );
   }
 });
@@ -36,3 +38,5 @@ var styles = {
     'padding': '18px 15px',
   }
 };
+
+export default HostScreen;

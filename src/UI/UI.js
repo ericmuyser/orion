@@ -1,20 +1,27 @@
+import React from 'react';
+
+import StartScreen from './Screens/StartScreen';
+import HostScreen from './Screens/HostScreen';
+import JoinScreen from './Screens/JoinScreen';
+import IngameScreen from './Screens/IngameScreen';
+
 window.UI_state = {
     screenKey: null
 };
 
-window.UI = React.createClass({
+var UI = React.createClass({
   getInitialState: function() {
     window.UI_controller = this;
     return window.UI_state;
   },
   render: function() {
     return (
-      <div style={styles.container}>
+      <View style={styles.container}>
         {this.state.screenKey === 'start' && <StartScreen />}
         {this.state.screenKey === 'hostGame' && <HostScreen />}
         {this.state.screenKey === 'joinGame' && <JoinScreen />}
         {this.state.screenKey === 'ingame' && <IngameScreen />}
-      </div>
+      </View>
     );
   }
 });
@@ -26,3 +33,5 @@ var styles = {
       left: 0
     }
 };
+
+export default UI;

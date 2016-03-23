@@ -1,4 +1,6 @@
-window.StartScreen = React.createClass({
+import React from 'react';
+
+var StartScreen = React.createClass({
   getInitialState: function() {
     return {instantActionTimer: 5};
   },
@@ -29,12 +31,12 @@ window.StartScreen = React.createClass({
   },
   render: function() {
     return (
-      <div style={styles.container}>
-        <div style={styles.hostButton} onClick={this._clickHost}>HOST GAME</div>
-        <div style={styles.joinButton} onClick={this._clickJoin}>JOIN GAME</div>
-        <div style={styles.instantActionButton} onClick={this._clickInstantAction}>INSTANT ACTION</div>
-        <div style={styles.countdown}><br />Instant action in... {this.state.instantActionTimer}</div>
-      </div>
+      <View style={styles.container}>
+        <View style={styles.hostButton} onClick={this._clickHost}>HOST GAME</View>
+        <View style={styles.joinButton} onClick={this._clickJoin}>JOIN GAME</View>
+        <View style={styles.instantActionButton} onClick={this._clickInstantAction}>INSTANT ACTION</View>
+        <View style={styles.countdown}><br />Instant action in... {this.state.instantActionTimer}</View>
+      </View>
     );
   }
 });
@@ -93,3 +95,5 @@ var styles = {
     //'color': '#FE0313',
   }
 };
+
+export default StartScreen;

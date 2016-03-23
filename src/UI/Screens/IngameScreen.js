@@ -1,4 +1,24 @@
-window.IngameScreen = React.createClass({
+import React from 'react';
+
+// import Modal from '../Components/Modal';
+// import Tooltip from '../Components/Tooltip';
+// import ActionBar from '../Components/ActionBar';
+// import ActionBarSlot from '../Components/ActionBarSlot';
+// import BottomMenu from '../Components/BottomMenu';
+// import BottomMenuItem from '../Components/BottomMenuItem';
+import Globe from '../Components/Globe';
+// import MainActionBar from '../Components/MainActionBar';
+// import SecondaryActionBar from '../Components/SecondaryActionBar';
+// import Minimap from '../Components/Minimap';
+// import Skillbar from '../Components/Skillbar';
+// import SkillbarSlot from '../Components/SkillbarSlot';
+// import SkillTree from '../Components/SkillTree';
+// import SkillTreeItem from '../Components/SkillTreeItem';
+import Row from '../Components/Row';
+import Col from '../Components/Col';
+import Grid from '../Components/Grid';
+
+var IngameScreen = React.createClass({
     getInitialState: function() {
         return {
             showOthers: false,
@@ -21,27 +41,35 @@ window.IngameScreen = React.createClass({
         var index = otherCharacters.indexOf(this.state.currentCharacter);
         otherCharacters.splice(index, 1);
 
-        otherElements = <div style={styles.otherCharacterChooser}>
+        otherElements = <View style={styles.otherCharacterChooser}>
             {otherCharacters.map((key) => {
-                return <div style={{width: 32, height: 32, marginBottom: 10, background: 'transparent url(assets/gfx/characters/' + key + '/walkDown-0002.png) no-repeat 0 0'}} onClick={()=>this._changeCharacter(key)}></div>;
+                return <View style={{width: 32, height: 32, marginBottom: 10, background: 'transparent url(assets/gfx/characters/' + key + '/walkDown-0002.png) no-repeat 0 0'}} onClick={()=>this._changeCharacter(key)}></View>;
             })}
-        </div>
+        </View>
     }
 
     return (
-      <div>
-        <div style={styles.characterChooser}>
-          <div style={{width: 32, height: 32, background: '#01242C url(assets/gfx/characters/' + this.state.currentCharacter + '/walkDown-0002.png) no-repeat 0 0'}} onClick={this._clickCharacter}></div>
+      <View>
+        <View style={styles.characterChooser}>
+          <View style={{width: 32, height: 32, background: '#01242C url(assets/gfx/characters/' + this.state.currentCharacter + '/walkDown-0002.png) no-repeat 0 0'}} onClick={this._clickCharacter}></View>
           {this.state.showOthers && otherElements}
-        </div>
-        <div style={styles.botom}>aa</div>
-      </div>
+        </View>
+        <Grid>
+          <Col span={12}>
+            <Text>box-1</Text>
+          </Col>
+          <Col span={12}>
+            <Text>box-2</Text>
+          </Col>
+        </Grid>
+        <Globe />
+      </View>
     );
   }
 });
 
 var styles = {
-  botom: {
+  bottom: {
     position: 'absolute',
     top: 700,
     left: 0,
@@ -72,3 +100,5 @@ var styles = {
     fontFamily: 'Press Start 2P'
   }
 };
+
+export default IngameScreen;

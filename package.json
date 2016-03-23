@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "dependencies": {
-    "express": "4.13.4",
-    "phaser": "https://github.com/photonstorm/phaser.git",
-    "socket.io": "^1.4.5"
+    "babel-cli": "^6.0.0",
+    "react": "^0.14.3",
+    "react-dom": "^0.14.3"
   },
   "main": "server.js",
   "scripts": {
@@ -23,6 +23,17 @@
   "homepage": "https://github.com/nwHacks2016/hackatron#readme",
   "devDependencies": {
     "grunt": "^0.4.5",
-    "grunt-contrib-connect": "git+https://github.com/gruntjs/grunt-contrib-connect.git"
+    "grunt-contrib-connect": "git+https://github.com/gruntjs/grunt-contrib-connect.git",
+    "webpack": "1.12.14",
+    "webpack-dev-server": "^1.12.1",
+    "babel-core": "^6.0.0",
+    "babel-eslint": "^4.1.6",
+    "babel-eslint": "^4.1.6",
+    "babel-loader": "^6.2.3",
+    "babel-jscs": "^2.0.5",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
+    "babel-preset-react-hmre": "^1.1.0",
+    "babel-preset-stage-0": "^6.3.13"
   }
 }

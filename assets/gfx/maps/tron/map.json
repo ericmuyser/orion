@@ -91,7 +91,46 @@
         {
          "height":500,
          "image":"..\/..\/..\/..\/..\/orion-ideal\/app\/assets\/gfx\/maps\/beginner-village.jpg",
-         "name":"Copy of Image Layer 2",
+         "name":"Image Layer 3",
+         "opacity":1,
+         "type":"imagelayer",
+         "visible":true,
+         "width":500,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "height":500,
+         "image":"d2.png",
+         "name":"Image Layer 8",
+         "offsetx":-968,
+         "offsety":-278,
+         "opacity":1,
+         "type":"imagelayer",
+         "visible":true,
+         "width":500,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "height":500,
+         "image":"..\/..\/..\/..\/..\/orion-ideal\/app\/assets\/gfx\/maps\/d3_bottom.png",
+         "name":"Image Layer 2",
+         "offsetx":80.0606060606061,
+         "offsety":590.060606060606,
+         "opacity":1,
+         "type":"imagelayer",
+         "visible":true,
+         "width":500,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "height":500,
+         "image":"..\/..\/..\/..\/..\/orion-ideal\/app\/assets\/gfx\/maps\/UndeadUITile01full.png",
+         "name":"Image Layer 4",
+         "offsetx":2156,
+         "offsety":360,
          "opacity":1,
          "type":"imagelayer",
          "visible":true,
@@ -104,46 +143,7 @@
          "image":"..\/..\/..\/..\/..\/orion-ideal\/app\/assets\/gfx\/maps\/Barbarian-Resource-Fury.gif",
          "name":"Image Layer 5",
          "offsetx":490,
-         "offsety":224,
-         "opacity":1,
-         "type":"imagelayer",
-         "visible":true,
-         "width":500,
-         "x":0,
-         "y":0
-        }, 
-        {
-         "height":500,
-         "image":"..\/..\/..\/..\/..\/orion-ideal\/app\/assets\/gfx\/maps\/d3_bottom.png",
-         "name":"Image Layer 2",
-         "offsetx":76.0606060606061,
-         "offsety":256.060606060606,
-         "opacity":1,
-         "type":"imagelayer",
-         "visible":true,
-         "width":500,
-         "x":0,
-         "y":0
-        }, 
-        {
-         "height":500,
-         "image":"..\/..\/..\/..\/..\/orion-ideal\/app\/assets\/gfx\/maps\/UndeadUITile01full.png",
-         "name":"Image Layer 4",
-         "offsetx":4,
-         "offsety":636,
-         "opacity":1,
-         "type":"imagelayer",
-         "visible":true,
-         "width":500,
-         "x":0,
-         "y":0
-        }, 
-        {
-         "height":500,
-         "image":"..\/..\/..\/..\/..\/orion-ideal\/app\/assets\/gfx\/maps\/d3_demon2.png",
-         "name":"Image Layer 6",
-         "offsetx":24,
-         "offsety":126,
+         "offsety":564,
          "opacity":1,
          "type":"imagelayer",
          "visible":true,
@@ -155,16 +155,85 @@
          "height":500,
          "image":"..\/..\/..\/..\/..\/orion-ideal\/app\/assets\/gfx\/maps\/target.png",
          "name":"Image Layer 7",
-         "offsetx":114,
-         "offsety":-70,
+         "offsetx":24,
+         "offsety":610,
          "opacity":1,
          "type":"imagelayer",
          "visible":true,
          "width":500,
          "x":0,
          "y":0
+        }, 
+        {
+         "height":500,
+         "image":"..\/..\/..\/..\/..\/orion-ideal\/app\/assets\/gfx\/maps\/d3_demon2.png",
+         "name":"Image Layer 6",
+         "offsetx":0,
+         "offsety":460,
+         "opacity":1,
+         "type":"imagelayer",
+         "visible":true,
+         "width":500,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "height":500,
+         "name":"Object Layer 2",
+         "objects":[
+                {
+                 "height":0,
+                 "id":4,
+                 "name":"",
+                 "polyline":[
+                        {
+                         "x":0,
+                         "y":0
+                        }, 
+                        {
+                         "x":-4,
+                         "y":-68
+                        }, 
+                        {
+                         "x":192,
+                         "y":-178
+                        }, 
+                        {
+                         "x":250,
+                         "y":-64
+                        }, 
+                        {
+                         "x":244,
+                         "y":-34
+                        }, 
+                        {
+                         "x":270,
+                         "y":2
+                        }, 
+                        {
+                         "x":138,
+                         "y":-82
+                        }, 
+                        {
+                         "x":2,
+                         "y":4
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":806,
+                 "y":218
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "width":500,
+         "x":0,
+         "y":0
         }],
- "nextobjectid":4,
+ "nextobjectid":7,
  "orientation":"orthogonal",
  "renderorder":"left-down",
  "tileheight":16,

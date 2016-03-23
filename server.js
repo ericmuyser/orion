@@ -1,18 +1,76 @@
-var express = require('express');
+// run babel app/assets/frontend/main.jsx --presets es2015,react
+// - /app
+// - /app/main.js - Entry point for your app
+// - /public
+// - /public/index.html
+// - /server
+// - /server/bundle.js - Our workflow code
+// - server.js - Express and proxies
+// - webpack.config.js
+// - webpack.production.config.js
+// - package.json - Deployment and project configuration
+
 var http = require('http');
 
+const express = require('express');
+const webpack = require('webpack');
+const webpackDevMiddleware = require('webpack-dev-middleware');
+const webpackHotMiddleware = require('webpack-hot-middleware');
+const config = require('./webpack.config.js');
+
+const isDeveloping = process.env.NODE_ENV !== 'production';
+const port = isDeveloping ? 8080 : process.env.PORT;
 var app = express();
 
-app.use(express.static(__dirname));
-// app.configure(function() {
-//     app.use(express.static(__dirname));
-//     app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
-// });
 
 var server = http.createServer(app);
 var io = require('socket.io').listen(server);
 var clients = [];
 var host = null;
+
+
+if (isDeveloping) {
+  config.devtool = 'eval'; // Speed up incremental builds
+  //config.entry['app'].unshift('./node_modules/react-native-webpack-server/hot/entry');
+  config.entry['app'].unshift('webpack-hot-middleware/client?path=http://localhost:8080/__webpack_hmr');
+  //config.entry['app'].unshift('webpack/hot/only-dev-server');
+  config.output.publicPath = 'http://localhost:8080/dist/';
+  config.plugins.unshift(new webpack.HotModuleReplacementPlugin());
+  config.plugins.unshift(new webpack.NoErrorsPlugin());
+
+  const compiler = webpack(config);
+
+  app.use(webpackDevMiddleware(compiler, {
+    publicPath: config.output.publicPath,
+    stats: {
+      colors: true,
+      hash: false,
+      timings: true,
+      chunks: false,
+      chunkModules: false,
+      modules: false
+    }
+  }));
+
+  app.use(webpackHotMiddleware(compiler, {
+    hot: true,
+    historyApiFallback: true
+  }));
+
+  app.use(express.static(__dirname));
+
+  // app.get('*', function response(req, res) {
+  //   res.write(middleware.fileSystem.readFileSync(path.join(__dirname, 'dist/index.html')));
+  //   res.end();
+  // });
+} else {
+  app.use(express.static(__dirname));
+
+  // app.get('*', function response(req, res) {
+  //   res.sendFile(path.join(__dirname, 'dist/index.html'));
+  // });
+}
+
 
 
 function getRandomInt(min, max) {
@@ -128,7 +186,20 @@ io.sockets.on('connection', function(socket) {
 });
 
 monitorHost();
-console.log('Open localhost:8080 on your browser.');
-console.log('Listening...');
 
-server.listen(process.env.PORT || 8080);
+
+
+server.listen(port, '0.0.0.0', function onStart(err) {
+  if (err) {
+    console.log(err);
+  }
+  console.info('==> Listening on port %s. Open up http://0.0.0.0:%s/ in your browser.', port, port);
+});
+
+
+
+// app.configure(function() {
+//     app.use(express.static(__dirname));
+//     app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
+// });
+

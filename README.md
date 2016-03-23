@@ -1,51 +1,106 @@
-```
-██╗  ██╗ █████╗  ██████╗██╗  ██╗ █████╗ ████████╗██████╗  ██████╗ ███╗   ██╗
-██║  ██║██╔══██╗██╔════╝██║ ██╔╝██╔══██╗╚══██╔══╝██╔══██╗██╔═══██╗████╗  ██║
-███████║███████║██║     █████╔╝ ███████║   ██║   ██████╔╝██║   ██║██╔██╗ ██║
-██╔══██║██╔══██║██║     ██╔═██╗ ██╔══██║   ██║   ██╔══██╗██║   ██║██║╚██╗██║
-██║  ██║██║  ██║╚██████╗██║  ██╗██║  ██║   ██║   ██║  ██║╚██████╔╝██║ ╚████║
-╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝   ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═══╝
-```
-## Overview
-Hackatron is a multiplayer game developed as a submission for nwHacks 2016. 
+Game Ideas:
+* Give random buffs, for no reason, that amp up the character.. like in real life - addrenaline hit
+* 
 
-This repository is forked from our [original submission](https://github.com/nwHacks2016/hackatron), which was developed alongside:
+MainActionBar.js
 
-|[**@mingchia-andy-liu**](https://github.com/mingchia-andy-liu)|[@wesleytsai](https://github.com/wesleytsai)|[@ericmuyser](https://github.com/ericmuyser)|
-|---------------------|---------------------|----------------------|
-|[**@stellafang**](https://github.com/stellafang)|[**@chan-kelv**](https://github.com/chan-kelv)| [**@angiecho**](https://github.com/angiecho)|
+LootSpawner.js
+CharacterSelect.js
+CharacterCreation.js
 
-## Installation
-Clone the project:
-```
-git clone https://github.com/tony-dinh/hackatron.git
-```
 
-Install dependencies:
-```
-cd hackatron
-npm install
-```
+Achievement.js
+Audio.js // SFX, Voice, Music, Ambient
 
-Spin up a local server:
-```
-node server.js
-```
+SkillBar.js
+SkillBarSlot.js
 
-Open `localhost:8080` in your browser & enjoy! :)
+AI/Combat.js
+AI/Movement.js
+AI/Enemy.js
+AI/Patrolling.js
 
-## Accomplishments
-Within 24 hours, our team was able to familiarize ourselves with the following web/game development technology to deliver a 2D multiplayer game:
-- `node.js` for dependency management
-- `phaser.io` game engine to do the heavy lifting
-- `express.js` to handle routing/server
-- `socket.io` to enable multiplayer
 
-## What We Learned
-1. Javascript syntax
-2. Dependency management using `node.js`
-3. Simple game-networking design allowing communication between multiple clients
-4. How to set up a web application
-5. How to deploy a project to heroku
-6. **How to stay awake for 24+ hours**
+Skills/Area.js /Aura.js /DamageOverTime.js 
+
+AreaOfEffectSkillHandler.js
+AutoAttackHitHandler.js
+ProjectileHandler.js
+MeleeHandler.js
+SpawnHandler.js
+
+ProjectileSkill.js
+MeleeSkill.js
+RestorationSkill.js
+
+Skill.js
+SkillType.js
+SkillStatistics.js
+StatusEffect.js
+TargetType.js
+Talent.js
+TalentEffect.js
+TalentGroup.js
+
+
+GameHandlers
+/CastAreaLayers.js
+/ClickToMoveLayers.js
+
+Interaction
+/BookHandler.js
+Harvestable.js
+interactable.js
+
+
+Items
+/Apparel.js
+Book.js
+BuffItem.js
+Consumable.js
+Item.js
+ItemGroup.js
+ItemType.js
+Material.js
+QuestItem.js
+Weapon.js
+
+LootContainer.js
+LootItem.js
+
+Map/Location.js WorldArea.js WorldMap.js
+
+NPC/Dialog/ActionType.js CharacterResponse.js ConversatonTree.js Topic.js
+
+AutioSetup
+ControlSetup
+
+Persistence/AchievementsLog GamePersistence GeneralLog GenericStats PlayerSave QuestLog
+
+Quest.js
+QuestChain.js
+QuestCondition.js
+QuestRequirements.js
+QuestReward.js
+QUestType.js
+
+
+
+
+Dialog.js
+PauseMenu
+MainMenu
+QuestLog
+QuestTracker
+SkillBarSlot
+SkillBarButton
+SkillBar.js
+Tooltip
+
+
+Effects/
+    Poison
+    Silence
+    Spark
+    Stun
 
