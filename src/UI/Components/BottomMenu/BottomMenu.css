@@ -6,7 +6,7 @@
 }
 
 .actions {
-    bottom: 13px;
+    bottom: 17px;
     position: absolute;
     left: 183px;
     width: 610px;
@@ -24,7 +24,6 @@
     bottom: 0;
     left: 0;
     z-index: 1;
-    transform: scaleX(-1);
 }
 
 .rightGlobe {

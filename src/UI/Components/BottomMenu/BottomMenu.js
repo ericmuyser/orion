@@ -38,7 +38,7 @@ class BottomMenu extends Component {
                     <View className={styles.actions}><ActionBar items={this.props.actionItems} maxItems={12} /></View>
                     <View className={styles.experience}><ExperienceBar current={this.props.currentExperience} max={this.props.maxExperience} /></View>
                     <View className={styles.leftGlobe}>
-                        <Globe color="red" statueKey="demon" />
+                        <Globe color="red" statueKey="demon" flip={true} />
                     </View>
                     <View className={styles.barLeft}><Image src="http://localhost:8080/assets/ui/action-bar/bottom-bar.png" /></View>
                     <View className={styles.barRight}><Image src="http://localhost:8080/assets/ui/action-bar/bottom-bar.png" /></View>

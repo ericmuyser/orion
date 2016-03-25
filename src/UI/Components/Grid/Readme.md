@@ -28,7 +28,7 @@ Action Bar Grid:
 
     <Grid>
         <Col span={4}>
-            <Globe color="green" />
+            <Globe color="green" flip={true} />
         </Col>
         <Col span={16} style={{'margin-top': 'auto'}}>
             <ActionBar {...props} />

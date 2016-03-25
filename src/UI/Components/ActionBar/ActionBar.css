@@ -1,8 +1,5 @@
 .container {
-
-    justify-content: center;
-    flex-direction: row;
-    flex-wrap: wrap;
+    line-height: 0; /* Remove spacing caused by empty line */
 }
 
 .slot {

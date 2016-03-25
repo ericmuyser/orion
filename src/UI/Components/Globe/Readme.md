@@ -4,7 +4,11 @@ Angel globe:
 
 Demon globe:
 
-    <Globe statueKey="angel" />
+    <Globe statueKey="demon" />
+
+Flipped globe:
+
+    <Globe flip={true} />
 
 Red globe:
 
