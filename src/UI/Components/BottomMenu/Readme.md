@@ -1,6 +1,6 @@
 Blank bottom menu:
 
-    <BottomMenu></BottomMenu>
+    <BottomMenu />
 
 Full bottom menu:
 
@@ -28,4 +28,4 @@ Full bottom menu:
         ]
     };
 
-    <BottomMenu {...props}></BottomMenu>
+    <BottomMenu {...props} />

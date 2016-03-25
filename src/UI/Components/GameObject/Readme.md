@@ -11,4 +11,4 @@ Basic game object:
         assetKey: 'tron'
     };
 
-    <GameObject {...props}></GameObject>
+    <GameObject {...props} />

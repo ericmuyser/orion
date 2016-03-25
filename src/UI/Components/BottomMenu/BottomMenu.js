@@ -51,19 +51,4 @@ class BottomMenu extends Component {
     }
 }
 
-// <Grid>
-//     <Col span={4}>
-//         <Globe />
-//     </Col>
-//     <Col span={16}>
-//         <View className={styles.bar}><img src="http://localhost:8080/assets/ui/action-bar/bottom-bar.png" /></View>
-//         {this.props.items.map((item) => {
-//             return <BottomMenuItem {...item} />;
-//         })}
-//     </Col>
-//     <Col span={4}>
-//         <Globe />
-//     </Col>
-// </Grid>
-
 export default BottomMenu;

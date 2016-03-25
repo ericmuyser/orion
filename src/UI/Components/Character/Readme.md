@@ -1,7 +1,7 @@
 Basic character:
 
-    <Character></Character>
+    <Character />
 
 Enemy character:
 
-    <Character key="ghost"></Character>
+    <Character key="ghost" />

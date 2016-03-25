@@ -1,7 +1,7 @@
 Basic avatar:
 
-    <Avatar></Avatar>
+    <Avatar />
 
 Enemy avatar:
 
-    <Avatar currentCharacter="ghost"></Avatar>
+    <Avatar currentCharacter="ghost" />

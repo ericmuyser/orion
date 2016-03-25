@@ -1,6 +1,6 @@
 Blank chat:
 
-    <Chat></Chat>
+    <Chat />
 
 Full chat:
 
@@ -12,10 +12,9 @@ Full chat:
         ]
     };
 
-    <Chat {...props}></Chat>
+    <Chat {...props} />
 
 Example chat:
-
 
     var props = {
         messages: [
@@ -73,7 +72,7 @@ Example chat:
             {name: "Zybl0re", text: "get on up"},
             {name: "Zybl0re", text: "get up"},
             {name: "Zybl0re", text: "get on up"},
-            {name: "phxl", text: "aper> and DANCE"},
+            {name: "phxl", text: "and DANCE"},
             {name: "nmp3bot", text: "ances :D-<"},
             {name: "nmp3bot", text: "ances :D|-<"},
             {name: "nmp3bot", text: "ances :D/-<"},
@@ -111,12 +110,12 @@ Example chat:
             {name: "Thirteen", text: " rofl. Those 2 are going to get a huge surprise when they meet at the beach."},
             {name: "Tyran", text: "i can't beleive how perfect their timing was"},
             {name: "Khassaki", text: "HI EVERYBODY!!!!!!!!!!"},
-            {name: "Judge", text: "ental> try pressing the the Caps Lock key"},
+            {name: "Judge", text: "try pressing the the Caps Lock key"},
             {name: "Khassaki", text: "O THANKS!!! ITS SO MUCH EASIER TO WRITE NOW!!!!!!!"},
             {name: "Judge", text: "fuck me"},
             {name: 'ragonflyBlade21', text: "A woman has a close male friend. This means that he is probably interested in her, which is ,why ehangs around so much. She sees him strictly as a friend. This always starts out with, you're a great guy, but I don't like you in that way. This is roughly the equivalent for the guy of going to a job interview and the company saying, You have a great resume, you have all the qualifications we are looking for, but we're not going to hire you. We will, however, use your resume as the basis for comparison for all other applicants. But, we're going to hire somebody who is far less qualified and is probably an alcoholic. And if he doesn't work out, we'll hire somebody else, but still not you. In fact, we will never hire you. But we will call you from time to time to complain about the person that we hired."}
         ]
     };
 
-    <Chat {...props}></Chat>
+    <Chat {...props} />
 
