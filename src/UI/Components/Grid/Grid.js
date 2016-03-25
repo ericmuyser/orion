@@ -45,7 +45,7 @@ class Grid extends Component {
                 return _row;
             });
             return (
-                <Row key={index} style={Object.assign({}, styles.row, this.props.style)}>
+                <Row key={index} style={styles.row}>
                     {content}
                 </Row>
             );
@@ -53,7 +53,7 @@ class Grid extends Component {
 
         if (GridComponent.length > 0) {
             return (
-                <View style={this.props.style}>
+                <View style={Object.assign({}, styles.container, this.props.style)}>
                     {GridComponent}
                 </View>
             );
@@ -65,6 +65,10 @@ class Grid extends Component {
 }
 
 const styles = StyleSheet.create({
+    container: {
+        display: 'flex',
+        flex: 1
+    },
     row: {
         flexDirection: 'row'
     }
