@@ -30,45 +30,34 @@ var host = null;
 
 
 if (isDeveloping) {
-  config.devtool = 'eval'; // Speed up incremental builds
-  //config.entry['app'].unshift('./node_modules/react-native-webpack-server/hot/entry');
-  config.entry['app'].unshift('webpack-hot-middleware/client?path=http://localhost:8080/__webpack_hmr');
-  //config.entry['app'].unshift('webpack/hot/only-dev-server');
-  config.output.publicPath = 'http://localhost:8080/dist/';
-  config.plugins.unshift(new webpack.HotModuleReplacementPlugin());
-  config.plugins.unshift(new webpack.NoErrorsPlugin());
+    config.devtool = 'eval'; // Speed up incremental builds
+    config.entry['app'].unshift('webpack-hot-middleware/client?path=http://localhost:8080/__webpack_hmr');
+    config.output.publicPath = 'http://localhost:8080/dist/';
+    config.plugins.unshift(new webpack.HotModuleReplacementPlugin());
+    config.plugins.unshift(new webpack.NoErrorsPlugin());
 
-  const compiler = webpack(config);
+    const compiler = webpack(config);
 
-  app.use(webpackDevMiddleware(compiler, {
-    publicPath: config.output.publicPath,
-    stats: {
-      colors: true,
-      hash: false,
-      timings: true,
-      chunks: false,
-      chunkModules: false,
-      modules: false
-    }
-  }));
+    app.use(webpackDevMiddleware(compiler, {
+        publicPath: config.output.publicPath,
+        stats: {
+            colors: true,
+            hash: false,
+            timings: true,
+            chunks: false,
+            chunkModules: false,
+            modules: false
+        }
+    }));
 
-  app.use(webpackHotMiddleware(compiler, {
-    hot: true,
-    historyApiFallback: true
-  }));
+    app.use(webpackHotMiddleware(compiler, {
+        hot: true,
+        historyApiFallback: true
+    }));
 
-  app.use(express.static(__dirname));
-
-  // app.get('*', function response(req, res) {
-  //   res.write(middleware.fileSystem.readFileSync(path.join(__dirname, 'dist/index.html')));
-  //   res.end();
-  // });
+    app.use(express.static(__dirname));
 } else {
-  app.use(express.static(__dirname));
-
-  // app.get('*', function response(req, res) {
-  //   res.sendFile(path.join(__dirname, 'dist/index.html'));
-  // });
+    app.use(express.static(__dirname));
 }
 
 
@@ -187,19 +176,10 @@ io.sockets.on('connection', function(socket) {
 
 monitorHost();
 
-
-
 server.listen(port, '0.0.0.0', function onStart(err) {
-  if (err) {
-    console.log(err);
-  }
-  console.info('==> Listening on port %s. Open up http://0.0.0.0:%s/ in your browser.', port, port);
+    if (err) {
+        console.log(err);
+    }
+
+    console.info('==> Listening on port %s. Open up http://0.0.0.0:%s/ in your browser.', port, port);
 });
-
-
-
-// app.configure(function() {
-//     app.use(express.static(__dirname));
-//     app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
-// });
-
