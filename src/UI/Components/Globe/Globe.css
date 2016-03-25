@@ -1,5 +1,8 @@
 .container {
     position: relative;
+    width: 183px;
+    height: 200px;
+    overflow: hidden;
 }
 
 .fill {

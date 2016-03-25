@@ -44,6 +44,7 @@ class Grid extends Component {
             let content = row.map((_row) => {
                 return _row;
             });
+
             return (
                 <Row key={index} style={styles.row}>
                     {content}
@@ -66,10 +67,10 @@ class Grid extends Component {
 
 const styles = StyleSheet.create({
     container: {
-        display: 'flex',
-        flex: 1
     },
     row: {
+        display: 'flex',
+        flex: 1,
         flexDirection: 'row'
     }
 });

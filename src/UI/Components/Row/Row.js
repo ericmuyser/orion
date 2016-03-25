@@ -7,7 +7,7 @@ class Row extends Component {
 
     render() {
         return (
-            <View style={Object.assign({}, styles.row, this.props.rowStyle)}>
+            <View style={Object.assign({}, styles.container, this.props.style)}>
                 {this.props.children}
             </View>
         );
@@ -15,7 +15,7 @@ class Row extends Component {
 }
 
 const styles = StyleSheet.create({
-    row: {
+    container: {
     }
 });
 
