@@ -4,18 +4,25 @@
   "description": "",
   "dependencies": {
     "babel-cli": "^6.0.0",
+    "brfs": "1.4.3",
     "css-loader": "0.23.1",
+    "p2": "0.7.1",
+    "phaser": "2.4.6",
+    "phaser-shim": "2.4.7",
+    "pixi.js": "3.0.10",
     "react": "^0.14.3",
     "react-css-modules": "3.7.6",
     "react-dom": "^0.14.3",
     "react-list": "0.7.16",
-    "style-loader": "0.13.1"
+    "style-loader": "0.13.1",
+    "transform-loader": "0.2.3"
   },
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "styleguide-server": "styleguidist server",
-    "styleguide-build": "styleguidist build"
+    "styleguide-build": "styleguidist build",
+    "build-phaser": "cd node_modules/phaser && grunt custom --exclude p2,creature,ninja --split true"
   },
   "repository": {
     "type": "git",

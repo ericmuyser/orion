@@ -44,3 +44,7 @@
     background: url(http://localhost:8080/assets/ui/action-bar/actions.png) no-repeat 0 0;
     background-size: 3000% auto;
 }
+
+.overlay:active {
+    opacity: 0.5;
+}

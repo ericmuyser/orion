@@ -34,18 +34,20 @@ class BottomMenu extends Component {
     render() {
         return (
             <View className={styles.container}>
-                <View>
-                    <View className={styles.actions}><ActionBar items={this.props.actionItems} maxItems={12} /></View>
-                    <View className={styles.experience}><ExperienceBar current={this.props.currentExperience} max={this.props.maxExperience} /></View>
-                    <View className={styles.leftGlobe}>
-                        <Globe color="red" statueKey="demon" flip={true} />
-                    </View>
-                    <View className={styles.barLeft}><Image src="http://localhost:8080/assets/ui/action-bar/bottom-bar.png" /></View>
-                    <View className={styles.barRight}><Image src="http://localhost:8080/assets/ui/action-bar/bottom-bar.png" /></View>
-                    <View className={styles.rightGlobe}>
-                        <Globe color="white" />
-                    </View>
-                </View>
+                <Grid>
+                    <Col span={4}>
+                        <Globe color="red" statueKey="demon" flip={true} fill={this.props.currentHealth / this.props.maxHealth * 100} />
+                    </Col>
+                    <Col span={16} style={{'margin-top': 'auto'}}>
+                        <ExperienceBar current={this.props.currentExperience} max={this.props.maxExperience} />
+                        <ActionBar items={this.props.actionItems} maxItems={12} />
+                        <Img className={styles.barLeft} src="http://localhost:8080/assets/ui/action-bar/bottom-bar.png" />
+                        <Img className={styles.barRight} src="http://localhost:8080/assets/ui/action-bar/bottom-bar.png" />
+                    </Col>
+                    <Col span={4}>
+                        <Globe color="blue" fill={this.props.currentMana / this.props.maxMana * 100} />
+                    </Col>
+                </Grid>
             </View>
         );
     }

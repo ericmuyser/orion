@@ -30,8 +30,8 @@ React.Text = React.createClass({
   }
 });
 
-React.Image = React.createClass({
-  displayName: "Image",
+React.Img = React.createClass({
+  displayName: "Img",
 
   render: function render() {
     return React.createElement(
@@ -43,4 +43,4 @@ React.Image = React.createClass({
 
 window.View = React.View;
 window.Text = React.Text;
-window.Image = React.Image;
+window.Img = React.Img;

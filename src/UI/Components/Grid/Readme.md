@@ -15,7 +15,7 @@ Basic Grid:
 Action Bar Grid:
 
     var props = {
-        maxItems: 11,
+        maxItems: 10,
         items: [
             {title: 'Attack', skillId: 43, slotId: 1},
             {title: 'Fireball', skillId: 74, slotId: 2},
@@ -28,7 +28,7 @@ Action Bar Grid:
 
     <Grid>
         <Col span={4}>
-            <Globe color="green" flip={true} />
+            <Globe color="red" statueKey="demon" flip={true} />
         </Col>
         <Col span={16} style={{'margin-top': 'auto'}}>
             <ActionBar {...props} />

@@ -31,7 +31,6 @@ module.exports = {
       );
 
       webpackConfig.module.loaders.push(
-        // Babel loader will use your project’s .babelrc
         {
           test: /\.css$/,
           include: path.join(__dirname, 'src'),
@@ -41,6 +40,8 @@ module.exports = {
           ]
         }
       );
+
+
       return webpackConfig;
     },
    // Put other configuration options here...

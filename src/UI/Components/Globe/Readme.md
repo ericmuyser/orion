@@ -1,27 +1,39 @@
-Angel globe:
+Full globe:
 
-    <Globe statueKey="angel" />
+    <Globe fill={100} />
 
-Demon globe:
+Empty globe:
 
-    <Globe statueKey="demon" />
+    <Globe fill={0} />
 
 Flipped globe:
 
-    <Globe flip={true} />
+    <Globe fill={100} flip={true} />
+
+Angel globe:
+
+    <Globe fill={100} statueKey="angel" />
+
+Demon globe:
+
+    <Globe fill={100} statueKey="demon" />
 
 Red globe:
 
-    <Globe color="red" />
+    <Globe fill={100} color="red" />
+
+Blue globe:
+
+    <Globe fill={100} color="blue" />
 
 White globe:
 
-    <Globe color="white" />
+    <Globe fill={100} color="white" />
 
 Black globe:
 
-    <Globe color="black" />
+    <Globe fill={100} color="black" />
 
 Green globe:
 
-    <Globe color="green" />
+    <Globe fill={100} color="green" />

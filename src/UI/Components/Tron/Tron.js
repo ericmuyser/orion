@@ -1,13 +1,18 @@
-class Tron extends Character {
-    toString() { '[Tron]' }
+import { Component, PropTypes, StyleSheet } from 'react'; require('../../../../vendor/react-fake-native');
 
-    init(params) {
+import GameObject from '../GameObject';
+
+class Tron extends Component {
+    toString() { '[Tron]' };
+
+    constructor(params) {
+        super();
+
         params = Object.assign(params, {characterKey: 'tron', defaultFrameKey: 'walkDown-0002', emitterKey: 'gfx/emitters/blueball'});
-
-        super.init(params);
 
         this.blocks = 1;
         this.teleported = false;
+        this.object = <GameObject {...params} />;
     }
 
     eatPellet(pellet) {
@@ -62,4 +67,12 @@ class Tron extends Character {
 
         setTimeout(() => { this.teleported = false; }, 2000);
     }
+
+    render() {
+        return (
+            <View>{this.object}</View>
+        );
+    }
 }
+
+export default Tron;
