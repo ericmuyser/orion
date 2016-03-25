@@ -4,7 +4,7 @@ import styles from './Globe.css';
 
 class Globe extends Component {
     static propTypes = {
-        color: PropTypes.oneOf(['white', 'black', 'red', 'green']),
+        color: PropTypes.oneOf(['white', 'black', 'red', 'blue', 'green']),
         statueKey: PropTypes.string,
         fill: PropTypes.number
     };

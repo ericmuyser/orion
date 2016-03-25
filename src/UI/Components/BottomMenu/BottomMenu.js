@@ -22,7 +22,10 @@ class BottomMenu extends Component {
 
     static defaultProps = {
         menuItems: [],
-        actionItems: [],
+        actionBar: {
+            maxItems: 12,
+            items: []
+        },
         currentHealth: 0,
         maxHealth: 0,
         currentMana: 0,
@@ -33,14 +36,14 @@ class BottomMenu extends Component {
 
     render() {
         return (
-            <View className={styles.container}>
+            <View className={styles.container} style={this.props.style}>
                 <Grid>
                     <Col span={4}>
                         <Globe color="red" statueKey="demon" flip={true} fill={this.props.currentHealth / this.props.maxHealth * 100} />
                     </Col>
                     <Col span={16} style={{'margin-top': 'auto'}}>
                         <ExperienceBar current={this.props.currentExperience} max={this.props.maxExperience} />
-                        <ActionBar items={this.props.actionItems} maxItems={12} />
+                        <ActionBar items={this.props.actionBar.items} maxItems={this.props.actionBar.maxItems} />
                         <Img className={styles.barLeft} src="http://localhost:8080/assets/ui/action-bar/bottom-bar.png" />
                         <Img className={styles.barRight} src="http://localhost:8080/assets/ui/action-bar/bottom-bar.png" />
                     </Col>

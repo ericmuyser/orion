@@ -26,7 +26,7 @@ class ActionBar extends Component {
             <View className={styles.container}>
                 {actions.map((action, i) => {
                     if (!action) { action = {}; }
-                    return <View className={styles.slot}><ActionBarSlot {...action} key={i} /></View>;
+                    return <View className={styles.slot} key={i}><ActionBarSlot {...action} key={i} /></View>;
                 })}
             </View>
         );

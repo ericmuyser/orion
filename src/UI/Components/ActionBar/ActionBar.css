@@ -1,6 +1,7 @@
 .container {
     line-height: 0; /* Remove spacing caused by empty line */
     background: #000;
+    text-align: center;
 }
 
 .slot {

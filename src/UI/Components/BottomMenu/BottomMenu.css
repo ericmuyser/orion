@@ -22,6 +22,7 @@
     left: 115px;
     z-index: 2;
     overflow: hidden;
+    pointer-events: none;
     clip: rect(0px, 400px, 240px, 0px);
 }
 
@@ -31,6 +32,7 @@
     right: 115px;
     z-index: 3;
     overflow: hidden;
+    pointer-events: none;
     transform: scaleX(-1);
     clip: rect(0px, 400px, 240px, 0px);
 }

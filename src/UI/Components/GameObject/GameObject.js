@@ -87,7 +87,7 @@ class GameObject extends Component {
                     Rotation: {this.props.rotation}<Line />
                     Visible: {this.props.visible ? 'true' : 'false'}<Line />
                     Properties: {Object.keys(this.props.properties).map((key) => {
-                        return <View>> {key}: {this.props.properties[key]}</View>
+                        return <View key={key}>* {key}: {this.props.properties[key]}</View>
                     })}<Line />
                     Sprite: {this.props.sprite || 'null'}<Line />
                     Asset Key: {this.props.assetKey}<Line />

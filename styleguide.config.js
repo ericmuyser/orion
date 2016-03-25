@@ -6,6 +6,7 @@ var webpack = require('webpack');
 
 module.exports = {
     title: 'Orion Guide',
+    assetsDir: path.join(__dirname, 'src'),
     components: function() {
       return glob.sync(path.resolve(__dirname, 'src/UI/Components/**/*.js')).filter(function(module) {
         return /\/[A-Z]\w*\.js$/.test(module);
