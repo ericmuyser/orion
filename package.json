@@ -8,6 +8,7 @@
     "react": "^0.14.3",
     "react-css-modules": "3.7.6",
     "react-dom": "^0.14.3",
+    "react-list": "0.7.16",
     "style-loader": "0.13.1"
   },
   "main": "server.js",

@@ -1,5 +1,5 @@
 // shouldComponentUpdate = () => false;
 
 export default function Component(props) {
-    return <div>{props.text}</div>;
+    return <div>{props.name}: {props.text}</div>;
 };
