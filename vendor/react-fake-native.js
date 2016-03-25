@@ -6,14 +6,13 @@ React.StyleSheet = {
     }
 };
 
-
 React.View = React.createClass({
   displayName: "View",
 
   render: function render() {
     return React.createElement(
       "div",
-      { style: this.props.style },
+      this.props,
       this.props.children
     );
   }
@@ -25,31 +24,23 @@ React.Text = React.createClass({
   render: function render() {
     return React.createElement(
       "div",
-      null,
+      this.props,
       this.props.children
     );
   }
 });
 
-// React.View = React.createClass({
-//   render: function() {
-//     return (
-//       <div style={this.props.style}>
-//         {this.props.children}
-//       </div>
-//     );
-//   }
-// });
+React.Image = React.createClass({
+  displayName: "Image",
 
-// React.Text = React.createClass({
-//   render: function() {
-//     return (
-//       <div>
-//         {this.props.children}
-//       </div>
-//     );
-//   }
-// });
+  render: function render() {
+    return React.createElement(
+      "img",
+      this.props
+    );
+  }
+});
 
 window.View = React.View;
 window.Text = React.Text;
+window.Image = React.Image;

@@ -30,11 +30,13 @@ class Avatar extends Component {
             var index = otherCharacters.indexOf(this.props.currentCharacter);
             otherCharacters.splice(index, 1);
 
-            otherElements = <View style={styles.otherCharacterChooser}>
-                {otherCharacters.map((key) => {
-                    return <View style={{width: 32, height: 32, marginBottom: 10, background: 'transparent url(http://localhost:8080/assets/gfx/characters/' + key + '/walkDown-0002.png) no-repeat 0 0'}} onClick={()=>this.changeCharacter(key)}></View>;
-                })}
-            </View>
+            otherElements = (
+                <View style={styles.otherCharacterChooser}>
+                    {otherCharacters.map((key) => {
+                        return <View style={{width: 32, height: 32, marginBottom: 10, background: 'transparent url(http://localhost:8080/assets/gfx/characters/' + key + '/walkDown-0002.png) no-repeat 0 0'}} onClick={()=>this.changeCharacter(key)}></View>;
+                    })}
+                </View>
+            );
         }
 
         return (

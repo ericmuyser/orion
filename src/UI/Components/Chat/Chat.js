@@ -2,6 +2,21 @@ import { Component, PropTypes, StyleSheet } from 'react'; require('../../../../v
 
 import ChatMessage from '../ChatMessage';
 
+// import ReactList from 'react-list'
+// <ReactList 
+//  itemRenderer={this.renderItem}
+//  length={this.props.items.length}
+//  type="uniform"
+//  />
+
+//  _renderItem = (index, key) => {
+    // return (
+        // <div key={key}>
+        //  {this.props.items[index].name}
+        // </div>
+    // );
+// }
+}
 class Chat extends React.Component {
     static propTypes = {
         messages: PropTypes.array

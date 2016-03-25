@@ -1,0 +1,24 @@
+.container {
+    position: relative;
+}
+
+.fill {
+    position: absolute;
+    bottom: -11px;
+    right: 0;
+    z-index: 2;
+}
+
+.angelStatue {
+    position: absolute;
+    bottom: -18px;
+    right: -125px;
+    z-index: 3;
+}
+
+.demonStatue {
+    position: absolute;
+    bottom: -18px;
+    right: -125px;
+    z-index: 3;
+}

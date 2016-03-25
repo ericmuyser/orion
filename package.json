@@ -4,8 +4,11 @@
   "description": "",
   "dependencies": {
     "babel-cli": "^6.0.0",
+    "css-loader": "0.23.1",
     "react": "^0.14.3",
-    "react-dom": "^0.14.3"
+    "react-css-modules": "3.7.6",
+    "react-dom": "^0.14.3",
+    "style-loader": "0.13.1"
   },
   "main": "server.js",
   "scripts": {

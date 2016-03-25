@@ -1,0 +1,20 @@
+.container {
+    position: relative;
+}
+
+.blocks {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 14px;
+    width: 100%;
+    background: url(http://localhost:8080/assets/ui/action-bar/experience-block.png) repeat-x 0 0;
+}
+
+.fill {
+    position: absolute;
+    top: 2px;
+    left: 0;
+    height: 9px;
+    background: url(http://localhost:8080/assets/ui/action-bar/experience-fill.png) repeat-x 0 0;
+}

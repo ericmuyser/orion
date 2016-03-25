@@ -27,6 +27,14 @@ module.exports = {
           plugins: [],
           presets: ['react', 'es2015', 'stage-0', 'react-hmre']
         }
+      },
+      {
+        test: /\.css$/,
+        include: path.join(__dirname, 'src'),
+        loaders: [
+          'style?sourceMap',
+          'css?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]'
+        ]
       }
     ]
   },

@@ -1,0 +1,10 @@
+.container {
+
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.slot {
+    display: inline-block;
+}

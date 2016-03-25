@@ -1,38 +1,27 @@
 import { Component, PropTypes, StyleSheet } from 'react'; require('../../../../vendor/react-fake-native');
 
+import styles from './Globe.css';
+
 class Globe extends Component {
     static propTypes = {
+        color: PropTypes.oneOf(['white', 'black', 'red', 'green']),
+        statueKey: PropTypes.string
     };
 
     static defaultProps = {
+        color: 'red',
+        statueKey: 'angel'
     };
 
     render() {
         return (
-            <View style={styles.container}>
-                <View style={styles.statue}><img src="http://localhost:8080/assets/ui/action-bar/right-statue.png" /></View>
-                <View style={styles.fill}><img src="http://localhost:8080/assets/ui/action-bar/right-globe.gif" /></View>
+            <View className={styles.container}>
+                {this.props.statueKey === 'angel' && <View className={styles.angelStatue}><Image src="http://localhost:8080/assets/ui/action-bar/angel-statue.png" /></View>}
+                {this.props.statueKey === 'demon' && <View className={styles.demonStatue}><Image src="http://localhost:8080/assets/ui/action-bar/demon-statue.png" /></View>}
+                <View className={styles.fill}><Image src={"http://localhost:8080/assets/ui/action-bar/globe-" + this.props.color + ".gif"} /></View>
             </View>
         );
     }
 }
-
-var styles = StyleSheet.create({
-    container: {
-        position: 'relative'
-    },
-    fill: {
-        position: 'absolute',
-        left: '0px',
-        top: '0px',
-        'z-index': 1,
-    },
-    statue: {
-        position: 'absolute',
-        left: '-190px',
-        top: '-81px',
-        'z-index': 2,
-    }
-});
 
 export default Globe;

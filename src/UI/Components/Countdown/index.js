@@ -1,1 +1,1 @@
-index.js
+export { default } from './Countdown.js';

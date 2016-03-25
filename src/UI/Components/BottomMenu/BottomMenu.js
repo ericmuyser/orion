@@ -2,43 +2,68 @@ import { Component, PropTypes, StyleSheet } from 'react'; require('../../../../v
 
 import Grid from '../Grid';
 import Col from '../Col';
-import BottomMenuItem from '../BottomMenuItem';
 import Globe from '../Globe';
+import ActionBar from '../ActionBar';
+import ExperienceBar from '../ExperienceBar';
+
+import styles from './BottomMenu.css';
 
 class BottomMenu extends Component {
     static propTypes = {
-        items: PropTypes.array
+        menuItems: PropTypes.array,
+        actionItems: PropTypes.array,
+        currentHealth: PropTypes.number,
+        maxHealth: PropTypes.number,
+        currentMana: PropTypes.number,
+        maxMana: PropTypes.number,
+        currentExperience: PropTypes.number,
+        maxExperience: PropTypes.number
     };
 
     static defaultProps = {
-        items: []
+        menuItems: [],
+        actionItems: [],
+        currentHealth: 0,
+        maxHealth: 0,
+        currentMana: 0,
+        maxMana: 0,
+        currentExperience: 0,
+        maxExperience: 0
     };
 
     render() {
         return (
-            <View style={styles.container}>
-                <Grid>
-                    <Col span={4}>
-                        <Globe />
-                    </Col>
-                    <Col span={16}>
-                        {this.props.items.map((item) => {
-                            return <BottomMenuItem {...item} />;
-                        })}
-                    </Col>
-                    <Col span={4}>
-                        <Globe />
-                    </Col>
-                </Grid>
+            <View className={styles.container}>
+                <View>
+                    <View className={styles.actions}><ActionBar items={this.props.actionItems} maxItems={12} /></View>
+                    <View className={styles.experience}><ExperienceBar current={this.props.currentExperience} max={this.props.maxExperience} /></View>
+                    <View className={styles.leftGlobe}>
+                        <Globe color="red" statueKey="demon" />
+                    </View>
+                    <View className={styles.barLeft}><Image src="http://localhost:8080/assets/ui/action-bar/bottom-bar.png" /></View>
+                    <View className={styles.barRight}><Image src="http://localhost:8080/assets/ui/action-bar/bottom-bar.png" /></View>
+                    <View className={styles.rightGlobe}>
+                        <Globe color="white" />
+                    </View>
+                </View>
             </View>
         );
     }
 }
 
-var styles = StyleSheet.create({
-    container: {
-        flexDirection: 'row'
-    },
-});
+// <Grid>
+//     <Col span={4}>
+//         <Globe />
+//     </Col>
+//     <Col span={16}>
+//         <View className={styles.bar}><img src="http://localhost:8080/assets/ui/action-bar/bottom-bar.png" /></View>
+//         {this.props.items.map((item) => {
+//             return <BottomMenuItem {...item} />;
+//         })}
+//     </Col>
+//     <Col span={4}>
+//         <Globe />
+//     </Col>
+// </Grid>
 
 export default BottomMenu;
