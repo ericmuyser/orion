@@ -1,0 +1,21 @@
+.container {
+    position: relative;
+    height: 14px;
+}
+
+.blocks {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 14px;
+    width: 100%;
+    background: url("/Game/Assets/UI/ActionBar/experience-block.png") repeat-x 0 0;
+}
+
+.fill {
+    position: absolute;
+    top: 2px;
+    left: 0;
+    height: 9px;
+    background: url("/Game/Assets/UI/ActionBar/experience-fill.png") repeat-x 0 0;
+}

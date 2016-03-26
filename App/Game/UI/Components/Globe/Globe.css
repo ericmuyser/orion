@@ -1,0 +1,36 @@
+.container {
+    position: relative;
+    width: 183px;
+    height: 200px;
+    overflow: hidden;
+}
+
+.fill {
+    position: absolute;
+    bottom: -11px;
+    right: 0;
+    z-index: 2;
+    background: url("/Game/Assets/UI/ActionBar/globe-bg.png") no-repeat center center;
+}
+
+.fillInner {
+    transition: 0.4s cubic-bezier(1, -1, 0, 2);
+}
+
+.angelStatue {
+    position: absolute;
+    bottom: -18px;
+    right: -125px;
+    z-index: 3;
+}
+
+.demonStatue {
+    position: absolute;
+    bottom: -18px;
+    right: -125px;
+    z-index: 3;
+}
+
+.flip {
+    transform: scaleX(-1);
+}

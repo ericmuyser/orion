@@ -6,15 +6,15 @@ var webpack = require('webpack');
 
 module.exports = {
     title: 'Orion Guide',
-    assetsDir: path.join(__dirname, 'src'),
+    assetsDir: path.join(__dirname, 'App'),
     components: function() {
-      return glob.sync(path.resolve(__dirname, 'src/UI/Components/**/*.js')).filter(function(module) {
+      return glob.sync(path.resolve(__dirname, 'App/Game/UI/Components/**/*.js')).filter(function(module) {
         return /\/[A-Z]\w*\.js$/.test(module);
       });
     },
     updateWebpackConfig: function(webpackConfig, env) {
       // Your source files folder or array of folders, should not include node_modules
-      let dir = path.join(__dirname, 'src');
+      let dir = path.join(__dirname, 'App');
       webpackConfig.module.loaders.push(
         // Babel loader will use your project’s .babelrc
         {
@@ -34,7 +34,7 @@ module.exports = {
       webpackConfig.module.loaders.push(
         {
           test: /\.css$/,
-          include: path.join(__dirname, 'src'),
+          include: path.join(__dirname, 'App'),
           loaders: [
             'style?sourceMap',
             'css?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]'

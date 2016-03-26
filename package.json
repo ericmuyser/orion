@@ -12,6 +12,7 @@
     "pixi.js": "3.0.10",
     "react": "^0.14.3",
     "react-css-modules": "3.7.6",
+    "react-demo": "1.2.0",
     "react-dom": "^0.14.3",
     "react-list": "0.7.16",
     "style-loader": "0.13.1",

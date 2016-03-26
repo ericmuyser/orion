@@ -1,0 +1,96 @@
+{
+    "meta": {
+        "generated": "1458436315065",
+        "version": "1.0",
+        "app": "gulp-phaser-tiled-pack",
+        "url": "https://github.com/englercj/gulp-phaser-tiled-pack"
+    },
+    "map": [
+        {
+            "type": "image",
+            "subtype": "tileset",
+            "key": "map_layer_Image Layer 8",
+            "name": "Image Layer 8",
+            "url": "Game/Assets/GFX/Maps/OdinPlateau/d2.png",
+            "overwrite": false
+        },
+        {
+            "type": "image",
+            "subtype": "tileset",
+            "key": "map_layer_Image Layer 7",
+            "name": "Image Layer 7",
+            "url": "Game/Assets/GFX/Maps/OdinPlateau/target.png",
+            "overwrite": false
+        },
+        {
+            "type": "image",
+            "subtype": "tileset",
+            "key": "map_layer_Image Layer 6",
+            "name": "Image Layer 6",
+            "url": "Game/Assets/GFX/Maps/OdinPlateau/d3_demon2.png",
+            "overwrite": false
+        },
+        {
+            "type": "image",
+            "subtype": "tileset",
+            "key": "map_layer_Image Layer 4",
+            "name": "Image Layer 4",
+            "url": "Game/Assets/GFX/Maps/OdinPlateau/UndeadUITile01full.png",
+            "overwrite": false
+        },
+        {
+            "type": "image",
+            "subtype": "tileset",
+            "key": "map_layer_Image Layer 2",
+            "name": "Image Layer 2",
+            "url": "Game/Assets/GFX/Maps/OdinPlateau/d3_bottom.png",
+            "overwrite": false
+        },
+        {
+            "type": "image",
+            "subtype": "tileset",
+            "key": "map_layer_Image Layer 5",
+            "name": "Image Layer 5",
+            "url": "Game/Assets/GFX/Maps/OdinPlateau/Barbarian-Resource-Fury.gif",
+            "overwrite": false
+        },
+        {
+            "type": "image",
+            "subtype": "tileset",
+            "key": "map_layer_Image Layer 3",
+            "name": "Image Layer 3",
+            "url": "Game/Assets/GFX/Maps/OdinPlateau/beginner-village.jpg", 
+            "overwrite": false
+        },
+        {
+            "type": "image",
+            "subtype": "tileset",
+            "key": "map_layer_Image Layer 1",
+            "name": "Image Layer 1",
+            "url": "Game/Assets/GFX/Maps/OdinPlateau/Kurast_Docks_jigsaw.jpg",
+            "overwrite": false
+        },
+        {
+            "type": "image",
+            "subtype": "tileset",
+            "key": "map_tileset_general2",
+            "name": "general2",
+            "url": "Game/Assets/GFX/Maps/OdinPlateau/town center sample.PNG",
+            "overwrite": false
+        },
+        {
+            "type": "image",
+            "subtype": "tileset",
+            "key": "map_tileset_general",
+            "name": "general",
+            "url": "Game/Assets/GFX/Maps/OdinPlateau/map.png",
+            "overwrite": false
+        },
+        {
+            "type": "tiledmap",
+            "key": "map_tiledmap",
+            "url": "Game/Assets/GFX/Maps/OdinPlateau/map.json",
+            "format": "TILED_JSON"
+        }
+    ]
+}
