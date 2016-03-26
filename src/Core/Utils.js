@@ -1,4 +1,4 @@
-window.Utils = {
+var Utils = {
     generateId: function() {
       function s4() {
         return Math.floor((1 + Math.random()) * 0x10000)
@@ -41,3 +41,5 @@ window.Utils = {
       return t;
     }
 };
+
+module.exports = Utils;

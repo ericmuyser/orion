@@ -2,7 +2,7 @@ import React from 'react';
 
 var HostScreen = React.createClass({
     _clickStart: function() {
-        Hackatron.loader.state.start('Game');
+        Orion.game.engine.state.start('Game');
     },
     render: function() {
         return (

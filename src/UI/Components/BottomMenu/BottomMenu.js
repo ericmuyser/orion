@@ -44,8 +44,8 @@ class BottomMenu extends Component {
                     <Col span={16} style={{'margin-top': 'auto'}}>
                         <ExperienceBar current={this.props.currentExperience} max={this.props.maxExperience} />
                         <ActionBar items={this.props.actionBar.items} maxItems={this.props.actionBar.maxItems} />
-                        <Img className={styles.barLeft} src="http://localhost:8080/assets/ui/action-bar/bottom-bar.png" />
-                        <Img className={styles.barRight} src="http://localhost:8080/assets/ui/action-bar/bottom-bar.png" />
+                        <Img className={styles.barLeft} src="Assets/ui/action-bar/bottom-bar.png" />
+                        <Img className={styles.barRight} src="Assets/ui/action-bar/bottom-bar.png" />
                     </Col>
                     <Col span={4}>
                         <Globe color="blue" fill={this.props.currentMana / this.props.maxMana * 100} />

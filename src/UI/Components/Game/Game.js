@@ -6,6 +6,15 @@ import styles from './Game.css';
 if (window) {
     window.PIXI = require('phaser-shim/dist/pixi').PIXI;
     window.Phaser = require('phaser-shim/dist/phaser').Phaser;
+    window.Phaser.Plugin.Tiled = require('../../../../vendor/phaser-tiled');
+    window.Utils = require('../../../Core/Utils');
+
+    if (!document.getElementById('socketio')) {
+        var script = document.createElement('script');
+        script.id = 'socketio';
+        script.src = 'http://localhost:8080/socket.io/socket.io.js';
+        document.head.appendChild(script);
+    }
 }
 
 class Game extends Component {
@@ -48,14 +57,20 @@ class Game extends Component {
     componentDidMount() {
         var self = this;
         this.engine = new Phaser.Game({parent: ReactDOM.findDOMNode(this.container), width: this.props.width, height: this.props.height, renderType: Phaser.CANVAS, forceSetTimeOut: true});
-        function Main() {}
-        Main.prototype.init = function() { self.init(); }
-        Main.prototype.preload = function() { self.preload(); }
-        Main.prototype.create = function() { self.create(); }
-        Main.prototype.update = function() { self.update(); }
-        Main.prototype.render = function() { self.render2(); }
-        this.engine.state.add('Main', Main);
-        this.engine.state.start('Main');
+
+        this.props.onInit(this.engine);
+
+        // function Main() {}
+        // Main.prototype.init = function() { self.init(); }
+        // Main.prototype.preload = function() { self.preload(); }
+        // Main.prototype.create = function() { self.create(); }
+        // Main.prototype.update = function() { self.update(); }
+        // Main.prototype.render = function() { self.render2(); }
+        // Object.keys(this.props.states).forEach((key) => {
+        //     this.engine.state.add(key, this.props.states[key]);
+        // });
+        // this.currentState = this.props.states['Preload'];
+        //this.engine.state.start('Preload');
     }
 
     componentWillUnmount() {
@@ -71,7 +86,12 @@ class Game extends Component {
     }
 
     render() {
-        return <View ref={(c) => this.container = c } key={this.props.key}></View>;
+        return (
+            <View>
+                <View ref={(c) => this.container = c } key={this.props.key}></View>
+                {this.props.children}
+            </View>
+        );
     }
 }
 

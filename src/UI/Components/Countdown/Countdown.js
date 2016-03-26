@@ -59,7 +59,6 @@ class Countdown extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <View style={{width: 32, height: 32, background: '#01242C url(http://localhost:8080/assets/gfx/characters/' + this.props.key + '/walkDown-0002.png) no-repeat 0 0'}}></View>
             </View>
         );
     }

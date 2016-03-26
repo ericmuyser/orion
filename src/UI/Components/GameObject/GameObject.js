@@ -27,29 +27,30 @@ class GameObject extends Component {
         sprite: null,
         visible: false,
         assetKey: null,
+        game: null
     };
 
-    constructor(params) {
-        super();
+    componentDidMount() {
+        //Object.assign(this, GameObject.defaultProps, this.props.params); // extends this with the params
 
-        Object.assign(this, GameObject.defaultProps, params); // extends this with the params
+        this._initSprite();
 
-        //this._initSprite(params);
+        this.props.onInit(this);
     }
 
     _initSprite() {
         var padding = 0.5; // 35% padding
 
-        if (this.assetKey) {
-            this.sprite = this.game.add.sprite(this.position.x, this.position.y, 'gfx/characters', this.assetKey + '/' + this.defaultFrameKey);
+        if (this.props.assetKey) {
+            this.sprite = this.props.game.add.sprite(this.props.position.x, this.props.position.y, 'gfx/characters', this.props.assetKey + '/' + this.props.defaultFrameKey);
         } else {
-            this.sprite = this.game.add.sprite(this.position.x, this.position.y, this.assetKey);
+            this.sprite = this.props.game.add.sprite(this.props.position.x, this.props.position.y, this.props.assetKey);
         }
         this.sprite.scale.x = 0.8;
         this.sprite.scale.y = 0.8;
 
-        this.game.physics.arcade.enable(this.sprite, Phaser.Physics.ARCADE);
-        this.sprite.body.setSize(this.dimensions.width / 2, this.dimensions.height / 2, this.dimensions.width / 4, this.dimensions.height / 4);
+        this.props.game.physics.arcade.enable(this.sprite, Phaser.Physics.ARCADE);
+        this.sprite.body.setSize(this.props.dimensions.width / 2, this.props.dimensions.height / 2, this.props.dimensions.width / 4, this.props.dimensions.height / 4);
     }
 
     set position(position) {
@@ -89,10 +90,16 @@ class GameObject extends Component {
                     Properties: {Object.keys(this.props.properties).map((key) => {
                         return <View key={key}>* {key}: {this.props.properties[key]}</View>
                     })}<Line />
-                    Sprite: {this.props.sprite || 'null'}<Line />
+                    Sprite: {this.sprite || 'null'}<Line />
                     Asset Key: {this.props.assetKey}<Line />
                 </View>
             )
+        } else {
+            return (
+                <View style={{width: 32, height: 32, background: '#01242C url("/Assets/gfx/characters/' + this.props.assetKey + '/walkDown-0002.png") no-repeat 0 0'}}>
+
+                </View>
+            );
         }
     }
 }

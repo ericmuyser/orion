@@ -8,8 +8,8 @@ var StartScreen = React.createClass({
         this.setState({instantActionTimer: this.state.instantActionTimer - 1});
 
         if (this.state.instantActionTimer === 0) {
-                clearInterval(this.interval);
-                Hackatron.loader.state.start('Game');
+            clearInterval(this.interval);
+            Orion.game.engine.state.start('Game');
         }
     },
     componentDidMount: function() {
@@ -27,8 +27,50 @@ var StartScreen = React.createClass({
         window.UI_controller.setState(window.UI_state);
     },
     _clickInstantAction: function() {
-        Hackatron.loader.state.start('Game');
+        Orion.game.engine.state.start('Game');
     },
+
+    fitToWindow: function() {
+        this.game.canvas.style['width'] = '100%';
+        this.game.canvas.style['height'] = '100%';
+        document.getElementById('game').style['width'] = Orion.getWidthRatioScale() * 100 + '%';
+        document.getElementById('game').style['height'] = Orion.getHeightRatioScale() * 100 + '%';
+        window.onresize();
+    },
+
+    create: function() {
+        if (Orion.debug) {
+            this.game.add.plugin(Phaser.Plugin.Debug);
+        }
+
+        this.stage.setBackgroundColor(0x2d2d2d);
+        var bg = this.add.sprite(0, 0, 'ui/screens/launch');
+        var ratio = bg.height / bg.width;
+        bg.width = Orion.GAME_WIDTH;
+        bg.height = bg.width * ratio;
+
+        this.startKey = this.input.keyboard.addKey(Phaser.Keyboard.ENTER);
+        this.musicKey = this.input.keyboard.addKey(Phaser.Keyboard.M);
+
+        window.UI_state.screenKey = 'start';
+        window.UI_controller.setState(window.UI_state);
+
+        this.fitToWindow();
+
+        this.game.music = this.game.add.audio('audio/bg-0002', 1, true);
+        this.game.music.play('', 0, 1, true);
+    },
+
+    update: function() {
+        if (this.startKey.isDown) {
+            this.game.state.start('Game');
+        }
+
+        if (this.musicKey.isDown) {
+            this.game.music.mute = !this.game.music.mute;
+        }
+    },
+
     render: function() {
         return (
             <View style={styles.container}>
@@ -97,3 +139,4 @@ var styles = {
 };
 
 export default StartScreen;
+

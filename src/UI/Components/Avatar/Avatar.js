@@ -33,7 +33,7 @@ class Avatar extends Component {
             otherElements = (
                 <View style={styles.otherCharacterChooser}>
                     {otherCharacters.map((key) => {
-                        return <View style={{width: 32, height: 32, marginBottom: 10, background: 'transparent url(http://localhost:8080/assets/gfx/characters/' + key + '/walkDown-0002.png) no-repeat 0 0'}} onClick={()=>this.changeCharacter(key)}></View>;
+                        return <View style={{width: 32, height: 32, marginBottom: 10, background: 'transparent url("/Assets/gfx/characters/' + key + '/walkDown-0002.png") no-repeat 0 0'}} onClick={()=>this.changeCharacter(key)}></View>;
                     })}
                 </View>
             );
@@ -41,7 +41,7 @@ class Avatar extends Component {
 
         return (
             <View style={styles.container}>
-                <View style={{width: 32, height: 32, background: '#01242C url(http://localhost:8080/assets/gfx/characters/' + this.props.currentCharacter + '/walkDown-0002.png) no-repeat 0 0'}} onClick={this.clickCharacter}></View>
+                <View style={{width: 32, height: 32, background: '#01242C url("/Assets/gfx/characters/' + this.props.currentCharacter + '/walkDown-0002.png") no-repeat 0 0'}} onClick={this.clickCharacter}></View>
                 {this.props.showOthers && otherElements}
             </View>
         );

@@ -1,18 +1,25 @@
 import { Component, PropTypes, StyleSheet } from 'react'; require('../../../../vendor/react-fake-native');
 
 import GameObject from '../GameObject';
+import Character from '../Character';
 
 class Tron extends Component {
     toString() { '[Tron]' };
 
-    constructor(params) {
-        super();
+    componentDidMount() {
 
-        params = Object.assign(params, {characterKey: 'tron', defaultFrameKey: 'walkDown-0002', emitterKey: 'gfx/emitters/blueball'});
+        // TODO: fix this
+        var params2 = Object.assign({}, this.props.params, {handler: this, assetKey: 'tron', defaultFrameKey: 'walkDown-0002', emitterKey: 'gfx/emitters/blueball'});
 
         this.blocks = 1;
         this.teleported = false;
-        this.object = <GameObject {...params} />;
+
+        this.characterElement = <Character params={params2} onInit={(character) => {
+            this.character = character;
+            this.props.onInit(this);
+        }} />;
+        //this.objectElement = <GameObject {...params2} onInit={(object) => { this.object = object; }} />;
+        this.forceUpdate();
     }
 
     eatPellet(pellet) {
@@ -70,7 +77,7 @@ class Tron extends Component {
 
     render() {
         return (
-            <View>{this.object}</View>
+            <View>{this.characterElement}</View>
         );
     }
 }

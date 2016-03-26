@@ -10,7 +10,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: url(http://localhost:8080/assets/ui/action-bar/action-empty.png) repeat-x 0 0;
+    background: url("/Assets/ui/action-bar/action-empty.png") repeat-x 0 0;
     background-size: 50px auto;
 }
 
@@ -20,7 +20,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: url(http://localhost:8080/assets/ui/action-bar/action-left.png) repeat-x 0 0;
+    background: url("/Assets/ui/action-bar/action-left.png") repeat-x 0 0;
     background-size: 50px auto;
 }
 
@@ -30,7 +30,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: url(http://localhost:8080/assets/ui/action-bar/action-right.png) repeat-x 0 0;
+    background: url("/Assets/ui/action-bar/action-right.png") repeat-x 0 0;
     background-size: 50px auto;
 }
 
@@ -41,7 +41,7 @@
     width: 43px;
     height: 42px;
     z-index: 2;
-    background: url(http://localhost:8080/assets/ui/action-bar/actions.png) no-repeat 0 0;
+    background: url("/Assets/ui/action-bar/actions.png") no-repeat 0 0;
     background-size: 3000% auto;
 }
 

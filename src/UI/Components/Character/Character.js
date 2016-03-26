@@ -13,18 +13,23 @@ class Character extends Component {
         key: 'tron'
     };
 
-    constructor(params) {
-        super();
-
+    componentDidMount() {
+        this.handler = this.props.params.handler;
         this.isAlive = true;
         this.dirty = false;
         this.points = 0;
-        this.game = params.game;
-        this.speed = params.speed;
-        this.emitterKey = params.emitterKey;
+        this.game = this.props.params.game;
+        this.speed = this.props.params.speed;
+        this.emitterKey = this.props.params.emitterKey;
+        this.assetKey = this.props.params.assetKey;
 
-        //this._addEmitterToSprite();
-        //this._addAnimationsToSprite();
+        this.objectElement = <GameObject {...this.props.params} onInit={(object) => {
+            this.object = object;
+            //this._addEmitterToSprite();
+            this._addAnimationsToSprite();
+            this.props.onInit(this);
+        }} />;
+        this.forceUpdate();
     }
 
     removePoints() {
@@ -43,15 +48,15 @@ class Character extends Component {
         this.isAlive = false;
         this.points = 0;
 
-        if (this.sprite.emitter) {
-            this.sprite.emitter.destroy();
+        if (this.object.sprite.emitter) {
+            this.object.sprite.emitter.destroy();
         }
 
-        this.sprite.destroy();
+        this.object.sprite.destroy();
     }
 
     _addEmitterToSprite() {
-        var emitter = this.game.add.emitter(this.sprite.x, this.sprite.y, 50);
+        var emitter = this.game.add.emitter(this.object.sprite.x, this.object.sprite.y, 50);
         emitter.width = 5;
         emitter.makeParticles(this.emitterKey);
         emitter.setXSpeed();
@@ -61,47 +66,47 @@ class Character extends Component {
         emitter.setScale(0.2, 0.05, 0.2, 0.05, 2000, Phaser.Easing.Quintic.Out);
         emitter.start(false, 250, 1);
 
-        this.sprite.emitter = emitter;
+        this.object.sprite.emitter = emitter;
 
-        this.aura = this.game.add.sprite(this.position.x, this.position.y, 'gfx/buffs/aura-1');
+        this.aura = this.game.add.object.sprite(this.position.x, this.position.y, 'gfx/buffs/aura-1');
         this.aura.scale.x = 0.8;
         this.aura.scale.y = 0.8;
 
-        this.sprite.addChild(this.aura);
+        this.object.sprite.addChild(this.aura);
     }
 
     changeSkin(key) {
-        var oldKey = this.characterKey;
-        var oldFrameName = this.sprite.frameName;
+        var oldKey = this.assetKey;
+        var oldFrameName = this.object.sprite.frameName;
 
-        this.sprite.animations.getAnimation('walkUp').destroy();
-        this.sprite.animations.getAnimation('walkDown').destroy();
-        this.sprite.animations.getAnimation('walkLeft').destroy();
-        this.sprite.animations.getAnimation('walkRight').destroy();
+        this.object.sprite.animations.getAnimation('walkUp').destroy();
+        this.object.sprite.animations.getAnimation('walkDown').destroy();
+        this.object.sprite.animations.getAnimation('walkLeft').destroy();
+        this.object.sprite.animations.getAnimation('walkRight').destroy();
 
-        this.characterKey = key;
+        this.assetKey = key;
 
         this._addAnimationsToSprite();
-        this.sprite.frameName = oldFrameName.replace(oldKey, key);
+        this.object.sprite.frameName = oldFrameName.replace(oldKey, key);
     }
 
     _addAnimationsToSprite() {
-        // Phaser.Animation.generateFrameNames(this.characterKey + '/walkDown/', 1, 3, '', 2)
+        // Phaser.Animation.generateFrameNames(this.assetKey + '/walkDown/', 1, 3, '', 2)
         // is equal to: [
-        // this.characterKey + '/walkDown/0001', 
-        // this.characterKey + '/walkDown/0002', 
-        // this.characterKey + '/walkDown/0003'
+        // this.assetKey + '/walkDown/0001', 
+        // this.assetKey + '/walkDown/0002', 
+        // this.assetKey + '/walkDown/0003'
         // ]
 
-        this.sprite.animations.add('walkUp', Phaser.Animation.generateFrameNames(this.characterKey + '/walkUp-', 1, 3, '', 4), 3, false, false);
-        this.sprite.animations.add('walkDown', Phaser.Animation.generateFrameNames(this.characterKey + '/walkDown-', 1, 3, '', 4), 3, false, false);
-        this.sprite.animations.add('walkLeft', Phaser.Animation.generateFrameNames(this.characterKey + '/walkLeft-', 1, 3, '', 4), 3, false, false);
-        this.sprite.animations.add('walkRight', Phaser.Animation.generateFrameNames(this.characterKey + '/walkRight-', 1, 3, '', 4), 3, false, false);
+        this.object.sprite.animations.add('walkUp', Phaser.Animation.generateFrameNames(this.assetKey + '/walkUp-', 1, 3, '', 4), 3, false, false);
+        this.object.sprite.animations.add('walkDown', Phaser.Animation.generateFrameNames(this.assetKey + '/walkDown-', 1, 3, '', 4), 3, false, false);
+        this.object.sprite.animations.add('walkLeft', Phaser.Animation.generateFrameNames(this.assetKey + '/walkLeft-', 1, 3, '', 4), 3, false, false);
+        this.object.sprite.animations.add('walkRight', Phaser.Animation.generateFrameNames(this.assetKey + '/walkRight-', 1, 3, '', 4), 3, false, false);
     }
 
     lock() {
-        this.sprite.body.velocity.x = 0;
-        this.sprite.body.velocity.y = 0;
+        this.object.sprite.body.velocity.x = 0;
+        this.object.sprite.body.velocity.y = 0;
         this.locked = true;
     }
 
@@ -113,64 +118,64 @@ class Character extends Component {
         if (this.locked) { return; }
         if (!this.isAlive) { return; }
 
-        this.inputDown = this.inputDown || (this.sprite.downKey && this.sprite.downKey.isDown);
-        this.inputUp = this.inputUp || (this.sprite.upKey && this.sprite.upKey.isDown);
-        this.inputLeft = this.inputLeft || (this.sprite.leftKey && this.sprite.leftKey.isDown);
-        this.inputRight = this.inputRight || (this.sprite.rightKey && this.sprite.rightKey.isDown);
+        this.inputDown = this.inputDown || (this.object.sprite.downKey && this.object.sprite.downKey.isDown);
+        this.inputUp = this.inputUp || (this.object.sprite.upKey && this.object.sprite.upKey.isDown);
+        this.inputLeft = this.inputLeft || (this.object.sprite.leftKey && this.object.sprite.leftKey.isDown);
+        this.inputRight = this.inputRight || (this.object.sprite.rightKey && this.object.sprite.rightKey.isDown);
 
-        if (!(this.sprite &&
-            this.sprite.body)) {
+        if (!(this.object.sprite &&
+            this.object.sprite.body)) {
             return;
         }
 
-        this.sprite.body.velocity.x = 0;
-        this.sprite.body.velocity.y = 0;
+        this.object.sprite.body.velocity.x = 0;
+        this.object.sprite.body.velocity.y = 0;
 
-        if (this.sprite.emitter) {
-            this.sprite.emitter.on = true;
+        if (this.object.sprite.emitter) {
+            this.object.sprite.emitter.on = true;
         }
 
-        //console.log(this.name + ' ' + this.sprite.x + ',' + this.sprite.y);
+        //console.log(this.name + ' ' + this.object.sprite.x + ',' + this.object.sprite.y);
 
         if (this.inputUp) {
-            this.sprite.animations.play('walkUp', 3, false);
-            this.sprite.body.velocity.y = -this.speed;
+            this.object.sprite.animations.play('walkUp', 3, false);
+            this.object.sprite.body.velocity.y = -this.speed;
             this.direction = 'walkUp';
             this.dirty = true;
-            if (this.sprite.emitter) {
-                this.sprite.emitter.x = this.sprite.x + 15;
-                this.sprite.emitter.y = this.sprite.y + 35;
+            if (this.object.sprite.emitter) {
+                this.object.sprite.emitter.x = this.object.sprite.x + 15;
+                this.object.sprite.emitter.y = this.object.sprite.y + 35;
             }
         } else if (this.inputDown) {
-            this.sprite.animations.play('walkDown', 3, false);
-            this.sprite.body.velocity.y = this.speed;
+            this.object.sprite.animations.play('walkDown', 3, false);
+            this.object.sprite.body.velocity.y = this.speed;
             this.direction = 'walkDown';
             this.dirty = true;
-            if (this.sprite.emitter) {
-                this.sprite.emitter.x = this.sprite.x + 15;
-                this.sprite.emitter.y = this.sprite.y + -5;
+            if (this.object.sprite.emitter) {
+                this.object.sprite.emitter.x = this.object.sprite.x + 15;
+                this.object.sprite.emitter.y = this.object.sprite.y + -5;
             }
         } else if (this.inputLeft) {
-            this.sprite.animations.play('walkLeft', 3, false);
-            this.sprite.body.velocity.x = -this.speed;
+            this.object.sprite.animations.play('walkLeft', 3, false);
+            this.object.sprite.body.velocity.x = -this.speed;
             this.direction = 'walkLeft';
             this.dirty = true;
-            if (this.sprite.emitter) {
-                this.sprite.emitter.x = this.sprite.x + 30;
-                this.sprite.emitter.y = this.sprite.y + 15;
+            if (this.object.sprite.emitter) {
+                this.object.sprite.emitter.x = this.object.sprite.x + 30;
+                this.object.sprite.emitter.y = this.object.sprite.y + 15;
             }
         } else if (this.inputRight) {
-            this.sprite.animations.play('walkRight', 3, false);
-            this.sprite.body.velocity.x = this.speed;
+            this.object.sprite.animations.play('walkRight', 3, false);
+            this.object.sprite.body.velocity.x = this.speed;
             this.direction = 'walkRight';
             this.dirty = true;
-            if (this.sprite.emitter) {
-                this.sprite.emitter.x = this.sprite.x;
-                this.sprite.emitter.y = this.sprite.y + 15;
+            if (this.object.sprite.emitter) {
+                this.object.sprite.emitter.x = this.object.sprite.x;
+                this.object.sprite.emitter.y = this.object.sprite.y + 15;
             }
         } else {
-            if (this.sprite.emitter) {
-                this.sprite.emitter.on = false;
+            if (this.object.sprite.emitter) {
+                this.object.sprite.emitter.on = false;
             }
         }
     }
@@ -178,7 +183,7 @@ class Character extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <View style={{width: 32, height: 32, background: '#01242C url(http://localhost:8080/assets/gfx/characters/' + this.props.key + '/walkDown-0002.png) no-repeat 0 0'}}></View>
+                {this.objectElement}
             </View>
         );
     }

@@ -11,7 +11,7 @@
             "subtype": "tileset",
             "key": "map_layer_Image Layer 8",
             "name": "Image Layer 8",
-            "url": "assets/gfx/maps/tron/d2.png",
+            "url": "Assets/gfx/maps/tron/d2.png",
             "overwrite": false
         },
         {
@@ -19,7 +19,7 @@
             "subtype": "tileset",
             "key": "map_layer_Image Layer 7",
             "name": "Image Layer 7",
-            "url": "assets/gfx/maps/tron/target.png",
+            "url": "Assets/gfx/maps/tron/target.png",
             "overwrite": false
         },
         {
@@ -27,7 +27,7 @@
             "subtype": "tileset",
             "key": "map_layer_Image Layer 6",
             "name": "Image Layer 6",
-            "url": "assets/gfx/maps/tron/d3_demon2.png",
+            "url": "Assets/gfx/maps/tron/d3_demon2.png",
             "overwrite": false
         },
         {
@@ -35,7 +35,7 @@
             "subtype": "tileset",
             "key": "map_layer_Image Layer 4",
             "name": "Image Layer 4",
-            "url": "assets/gfx/maps/tron/UndeadUITile01full.png",
+            "url": "Assets/gfx/maps/tron/UndeadUITile01full.png",
             "overwrite": false
         },
         {
@@ -43,7 +43,7 @@
             "subtype": "tileset",
             "key": "map_layer_Image Layer 2",
             "name": "Image Layer 2",
-            "url": "assets/gfx/maps/tron/d3_bottom.png",
+            "url": "Assets/gfx/maps/tron/d3_bottom.png",
             "overwrite": false
         },
         {
@@ -51,7 +51,7 @@
             "subtype": "tileset",
             "key": "map_layer_Image Layer 5",
             "name": "Image Layer 5",
-            "url": "assets/gfx/maps/tron/Barbarian-Resource-Fury.gif",
+            "url": "Assets/gfx/maps/tron/Barbarian-Resource-Fury.gif",
             "overwrite": false
         },
         {
@@ -59,7 +59,15 @@
             "subtype": "tileset",
             "key": "map_layer_Image Layer 3",
             "name": "Image Layer 3",
-            "url": "assets/gfx/maps/tron/beginner-village.jpg", 
+            "url": "Assets/gfx/maps/tron/beginner-village.jpg", 
+            "overwrite": false
+        },
+        {
+            "type": "image",
+            "subtype": "tileset",
+            "key": "map_layer_Image Layer 1",
+            "name": "Image Layer 1",
+            "url": "Assets/gfx/maps/tron/town center sample.PNG",
             "overwrite": false
         },
         {
@@ -67,7 +75,7 @@
             "subtype": "tileset",
             "key": "map_tileset_general2",
             "name": "general2",
-            "url": "assets/gfx/maps/tron/town center sample.PNG",
+            "url": "Assets/gfx/maps/tron/town center sample.PNG",
             "overwrite": false
         },
         {
@@ -75,13 +83,13 @@
             "subtype": "tileset",
             "key": "map_tileset_general",
             "name": "general",
-            "url": "assets/gfx/maps/tron/map.png",
+            "url": "Assets/gfx/maps/tron/map.png",
             "overwrite": false
         },
         {
             "type": "tiledmap",
             "key": "map_tiledmap",
-            "url": "assets/gfx/maps/tron/map.json",
+            "url": "Assets/gfx/maps/tron/map.json",
             "format": "TILED_JSON"
         }
     ]

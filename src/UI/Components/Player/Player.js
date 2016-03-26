@@ -11,32 +11,36 @@ class Player extends Component {
     static defaultProps = {
     };
 
-    constructor() {
-        super();
+    componentDidMount() {
+        // TODO: fix this up
 
-        this.character = new Tron(params);
-        this.character.init(params);
+        this.tronElement = <Tron params={this.props.params} onInit={(tron) => {
+            this.tron = tron;
+            this.character = tron.character;
 
-        this.id = params.id;
-        this.game = params.game;
-        this.name = params.name;
+            this.id = this.props.params.id;
+            this.game = this.props.params.game;
+            this.name = this.props.params.name;
 
-        if (params.keys) {
-            this.setupKeys(params.keys);
-        }
+            if (this.props.params.keys) {
+                this.setupKeys(this.props.params.keys);
+            }
+            this.props.onInit(this);
+        }} />;
+
+        this.forceUpdate();
     }
-
 
     // Method for registering hardware keys to a given sprite
     setupKeys(keys) {
-        this.character.sprite.upKey = this.game.input.keyboard.addKey(keys.up);
-        this.character.sprite.downKey = this.game.input.keyboard.addKey(keys.down);
-        this.character.sprite.leftKey = this.game.input.keyboard.addKey(keys.left);
-        this.character.sprite.rightKey = this.game.input.keyboard.addKey(keys.right);
+        this.character.object.sprite.upKey = this.game.input.keyboard.addKey(keys.up);
+        this.character.object.sprite.downKey = this.game.input.keyboard.addKey(keys.down);
+        this.character.object.sprite.leftKey = this.game.input.keyboard.addKey(keys.left);
+        this.character.object.sprite.rightKey = this.game.input.keyboard.addKey(keys.right);
 
         // register attack key if it exists
         if (keys.att) {
-            this.character.sprite.attKey = this.game.input.keyboard.addKey(keys.att);
+            this.character.object.sprite.attKey = this.game.input.keyboard.addKey(keys.att);
         }
     }
 
@@ -62,7 +66,7 @@ class Player extends Component {
         this.nameText = this.game.add.text(0, 0, name, style);
         this.nameText.anchor.set(0.5);
 
-        this.character.sprite.addChild(this.nameText);
+        this.character.object.sprite.addChild(this.nameText);
     }
 
     get name() {
@@ -73,7 +77,7 @@ class Player extends Component {
         return (
             <View style={styles.container}>
                 Player here
-                <Character key="ghost"></Character>
+                {this.tronElement}
             </View>
         );
     }

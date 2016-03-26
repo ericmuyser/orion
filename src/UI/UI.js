@@ -6,7 +6,7 @@ import JoinScreen from './Screens/JoinScreen';
 import IngameScreen from './Screens/IngameScreen';
 
 window.UI_state = {
-        screenKey: null
+    screenKey: null
 };
 
 var UI = React.createClass({

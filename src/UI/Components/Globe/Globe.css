@@ -10,7 +10,7 @@
     bottom: -11px;
     right: 0;
     z-index: 2;
-    background: url(http://localhost:8080/assets/ui/action-bar/globe-bg.png) no-repeat center center;
+    background: url("/Assets/ui/action-bar/globe-bg.png") no-repeat center center;
 }
 
 .fillInner {
