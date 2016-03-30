@@ -1,4 +1,4 @@
-import { Component, PropTypes, StyleSheet } from 'react'; require('../../../../../vendor/react-fake-native');
+import { Component, PropTypes, StyleSheet } from 'react'; require('../../../../Vendor/ReactFakeNative');
 
 class SkillBarSlot extends Component {
     render() {

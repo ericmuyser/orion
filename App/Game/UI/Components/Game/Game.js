@@ -1,4 +1,4 @@
-import { Component, PropTypes, StyleSheet } from 'react'; require('../../../../../vendor/react-fake-native');
+import { Component, PropTypes, StyleSheet } from 'react'; require('../../../../Vendor/ReactFakeNative');
 import ReactDOM from 'react-dom';
 
 import styles from './Game.css';
@@ -6,7 +6,7 @@ import styles from './Game.css';
 if (window) {
     window.PIXI = require('phaser-shim/dist/pixi').PIXI;
     window.Phaser = require('phaser-shim/dist/phaser').Phaser;
-    window.Phaser.Plugin.Tiled = require('../../../../../vendor/phaser-tiled');
+    window.Phaser.Plugin.Tiled = require('./vendor/phaser-tiled');
     window.Utils = require('../../../Core/Utils');
 
     if (!document.getElementById('socketio')) {

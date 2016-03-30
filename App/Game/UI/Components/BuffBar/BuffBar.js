@@ -1,4 +1,4 @@
-import React from 'react'; require('../../../../../vendor/react-fake-native');
+import React from 'react'; require('../../../../Vendor/ReactFakeNative');
 
 class BuffBar extends React.Component {
     render() {

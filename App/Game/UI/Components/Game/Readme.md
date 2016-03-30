@@ -116,8 +116,6 @@ RPG:
     OrionV1.GAME_HEIGHT = 400; // Game originally designed for 800px
     OrionV1.UI_WIDTH = 800; // UI originally designed for 800px
     OrionV1.UI_HEIGHT = 800; // UI originally designed for 800px
-    OrionV1.IngameState = function(game) {
-    };
 
     var PLAYER_SPEED = 200;
     var UPDATE_INTERVAL = 100;

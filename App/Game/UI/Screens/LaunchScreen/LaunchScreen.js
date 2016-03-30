@@ -139,4 +139,3 @@ var styles = {
 };
 
 export default StartScreen;
-

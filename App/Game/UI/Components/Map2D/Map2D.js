@@ -1,4 +1,4 @@
-import { Component, PropTypes, StyleSheet } from 'react'; require('../../../../../vendor/react-fake-native');
+import { Component, PropTypes, StyleSheet } from 'react'; require('../../../../Vendor/ReactFakeNative');
 
 class Map2D extends Component {
     toString() { `[Map2D width=? height=?` }
@@ -86,7 +86,7 @@ function extendTilemap(tilemap) {
 
         if (collides === undefined) { collides = true; }
         if (recalculate === undefined) { recalculate = true; }
-        
+
         layer = this.getLayer(layer);
 
         if (typeof indexes === 'number')
@@ -126,7 +126,7 @@ function extendTilemap(tilemap) {
 
         if (collides === undefined) { collides = true; }
         if (recalculate === undefined) { recalculate = true; }
-        
+
         layer = this.getLayer(layer);
 
         if (start > stop)

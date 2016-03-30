@@ -1,4 +1,4 @@
-import { Component, PropTypes as T, StyleSheet } from 'react'; require('../../../../../vendor/react-fake-native');
+import { Component, PropTypes as T, StyleSheet } from 'react'; require('../../../../Vendor/ReactFakeNative');
 import ReactList from 'react-list';
 
 import ChatMessage from '../ChatMessage';

@@ -1,4 +1,4 @@
-import { Component, PropTypes as T } from 'react'; require('../../../../../vendor/react-fake-native');
+import { Component, PropTypes as T } from 'react'; require('../../../../Vendor/ReactFakeNative');
 
 import styles from './Example.css';
 
