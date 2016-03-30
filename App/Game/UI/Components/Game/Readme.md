@@ -63,14 +63,14 @@ Ship Trail:
 
                     OrionV1.game.engine.input.onDown.add(launch, this);
                 },
-                update: function(gam) {
+                update: function() {
                     sprite.rotation = sprite.body.angle;
 
                     bmd.context.fillRect(sprite.x, sprite.y, 2, 2);
 
                     bmd.dirty = true;
                 },
-                render: function(gam) {
+                render: function() {
                     OrionV1.game.engine.debug.bodyInfo(sprite, 32, 32);
                 }
             };

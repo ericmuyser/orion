@@ -3,8 +3,8 @@ var webpack = require('webpack');
 
 module.exports = {
   entry: {
-    'app': ['./src/index.web.js'],
-    'index.ios': ['./src/index.ios.js']
+    'app': ['./App/Game/index.web.js'],
+    'index.ios': ['./App/Game/index.ios.js']
   },
   output: {
     path: __dirname,
